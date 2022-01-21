@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # MyNewAngular
+=======
+# MyAngularNew
+>>>>>>> b758d272c81de4b91ff98105d739cb0b80ff188e
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 

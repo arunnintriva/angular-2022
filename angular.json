@@ -3,7 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "my-new-angular": {
+=======
+    "my-angular-new": {
+>>>>>>> b758d272c81de4b91ff98105d739cb0b80ff188e
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+<<<<<<< HEAD
             "outputPath": "dist/my-new-angular",
+=======
+            "outputPath": "dist/my-angular-new",
+>>>>>>> b758d272c81de4b91ff98105d739cb0b80ff188e
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +69,30 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "my-new-angular:build"
           },
           "configurations": {
             "production": {
               "browserTarget": "my-new-angular:build:production"
+=======
+            "browserTarget": "my-angular-new:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "my-angular-new:build:production"
+>>>>>>> b758d272c81de4b91ff98105d739cb0b80ff188e
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "my-new-angular:build"
+=======
+            "browserTarget": "my-angular-new:build"
+>>>>>>> b758d272c81de4b91ff98105d739cb0b80ff188e
           }
         },
         "test": {
@@ -109,16 +129,28 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
+<<<<<<< HEAD
             "devServerTarget": "my-new-angular:serve"
           },
           "configurations": {
             "production": {
               "devServerTarget": "my-new-angular:serve:production"
+=======
+            "devServerTarget": "my-angular-new:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-angular-new:serve:production"
+>>>>>>> b758d272c81de4b91ff98105d739cb0b80ff188e
             }
           }
         }
       }
     }
   },
+<<<<<<< HEAD
   "defaultProject": "my-new-angular"
+=======
+  "defaultProject": "my-angular-new"
+>>>>>>> b758d272c81de4b91ff98105d739cb0b80ff188e
 }

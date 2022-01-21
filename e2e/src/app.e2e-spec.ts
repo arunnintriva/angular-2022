@@ -10,7 +10,11 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', async () => {
     await page.navigateTo();
+<<<<<<< HEAD
     expect(await page.getTitleText()).toEqual('my-new-angular app is running!');
+=======
+    expect(await page.getTitleText()).toEqual('my-angular-new app is running!');
+>>>>>>> b758d272c81de4b91ff98105d739cb0b80ff188e
   });
 
   afterEach(async () => {
