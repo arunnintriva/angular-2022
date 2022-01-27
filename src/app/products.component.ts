@@ -10,12 +10,13 @@ export class ProductsComponent {
   products = ['a book', 'a tree', 'a pen'];
 
   constructor() {
-    // setTimeout(() => {
-    //   // this.productName = 'a tree';
-    //   this.isDisabled = false;
-    // }, 3000);
+    setTimeout(() => {
+      // this.productName = 'a tree';
+      this.isDisabled = false;
+    }, 3000);
   }
   onAddProducts() {
+    console.log('working');
     this.products.push(this.productName);
   }
 }
