@@ -4,4 +4,21 @@ import { Component } from '@angular/core';
   selector: 'app-products',
   templateUrl: './products.component.html',
 })
-export class ProductsComponent {}
+export class ProductsComponent {
+  productName = 'a book';
+  isDisabled = true;
+  products = ['a book', 'a tree', 'a pen'];
+
+  constructor() {
+    setTimeout(() => {
+      // this.productName = 'a tree';
+      this.isDisabled = false;
+    }, 3000);
+  }
+  onAddProducts() {
+    this.products.push(this.productName);
+  }
+  onRemoveProduct(productName: string) {
+    this.products = this.products.filter((p) => p !== productName);
+  }
+}

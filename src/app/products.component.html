@@ -1,3 +1,17 @@
+<!-- <h2>Hi,this is product component</h2>
+<h1>welcome</h1>
+<h3>new angular app </h3>
+<input type="text" [(ngModel)]="productName">
+<button (click)="productName = 'A tree'" [disabled]="isDisabled">Change Name</button>
+<div>{{ productName }}</div> -->
+
 <h2>Hi,this is product component</h2>
 <h1>welcome</h1>
-<h3>new angular app</h3>
+<h3>new angular app </h3>
+<input *ngIf="!isDisabled" type="text" [(ngModel)]="productName">
+<button *ngIf="!isDisabled" (click)="onAddProducts()">Add Product</button>
+<div *ngFor="let product of products">{{ product }}</div>
+<!-- productName is binded from products.components.ts file to product.component.ts
+    ,@Input is used in the product.component.ts file to get the each productName -->
+<app-product (productClicked)="onRemoveProduct(product)" *ngFor="let product of products" [productName]='product'>
+</app-product>
