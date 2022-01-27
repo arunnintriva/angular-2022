@@ -1,22 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit, OnDestroy {
   productName = 'a book';
   isDisabled = true;
-  products = ['a book', 'a tree', 'a pen'];
+  products = [];
+  private productSubscription: Subscription;
 
-  constructor() {
+  constructor(private productService: ProductsService) {
     setTimeout(() => {
-      // this.productName = 'a tree';
       this.isDisabled = false;
     }, 3000);
   }
-  onAddProducts() {
-    this.products.push(this.productName);
+
+  ngOnInit() {
+    this.products = this.productService.getProducts();
+    this.productSubscription = this.productService.productUpdated.subscribe(
+      () => {
+        this.products = this.productService.getProducts();
+      }
+    );
+  }
+  ngOnDestroy() {
+    this.productSubscription.unsubscribe();
+  }
+  onAddProduct(form) {
+    if (form.valid) {
+      console.log(form);
+      this.productService.addProducts(form.value.productName);
+    }
   }
   onRemoveProduct(productName: string) {
     this.products = this.products.filter((p) => p !== productName);
