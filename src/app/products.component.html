@@ -13,4 +13,5 @@
 <div *ngFor="let product of products">{{ product }}</div>
 <!-- productName is binded from products.components.ts file to product.component.ts
     ,@Input is used in the product.component.ts file to get the each productName -->
-<app-product *ngFor="let product of products " [productName]='product'></app-product>
+<app-product (productClicked)="onRemoveProduct(product)" *ngFor="let product of products" [productName]='product'>
+</app-product>
