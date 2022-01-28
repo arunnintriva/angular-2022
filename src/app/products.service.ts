@@ -11,4 +11,8 @@ export class ProductsService {
   getProducts() {
     return [...this.products];
   }
+  deleteProduct(productName: String) {
+    this.products = this.products.filter((p) => p !== productName);
+    this.productUpdated.next();
+  }
 }
