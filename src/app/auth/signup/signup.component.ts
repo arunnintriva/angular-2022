@@ -1,14 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AuthService } from '../authService';
 
 @Component({
-  selector: "app-signup",
-  templateUrl: "./signup.component.html",
-  styleUrls: ["./signup.component.css"],
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
   maxDate;
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     // to set the birth year up to 18
@@ -17,6 +18,10 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    this.authService.registerUser({
+      email: form.value.email,
+      password: form.value.password,
+    });
     console.log(form);
   }
 }

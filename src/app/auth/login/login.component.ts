@@ -1,26 +1,31 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../authService';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
-      email: new FormControl("", {
+      email: new FormControl('', {
         validators: [Validators.required, Validators.email],
       }),
-      password: new FormControl("", { validators: [Validators.required] }),
+      password: new FormControl('', { validators: [Validators.required] }),
     });
   }
 
   onSubmit() {
-    console.log(this.loginForm);
+    this.authService.loginData({
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password,
+    });
+    console.log('loginForm', this.loginForm);
   }
 }
