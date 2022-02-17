@@ -1,1 +1,11 @@
-<h1>welcome </h1>
+<mat-sidenav-container>
+    <mat-sidenav #sideNav>
+        <app-sidenav (closeSidenav)="sideNav.close()"></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-header (sidenavToggle)="sideNav.toggle()"></app-header>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

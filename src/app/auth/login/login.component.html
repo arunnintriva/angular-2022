@@ -1,0 +1,19 @@
+<section class="signup-form">
+  <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" fxLayoutGap="10px"
+    (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <input type="email" matInput placeholder="Enter your email" formControlName="email" required>
+      <mat-error>Invalid Email address</mat-error>
+      <mat-error>Email address cannot be blank</mat-error>
+    </mat-form-field>
+
+    <mat-form-field hintLabel="minimum 6 character required">
+      <input type="password" matInput placeholder="Enter your password" required minlength="6"
+        formControlName="password">
+      <mat-error>Password cannot be blank</mat-error>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="loginForm.invalid" mat-raised-button color="primary">Submit</button>
+  </form>
+</section>

@@ -1,0 +1,31 @@
+mat-sidenav-container,
+mat-sidenav,
+mat-sidenav-contant {
+    height: 100%;
+}
+mat-sidenav {
+    width: 250px;
+}
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+a:hover,
+:active {
+    color: rgb(167, 168, 168);
+}
+.navigation--items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-caption {
+    display: inline-block;
+    padding-left: 6px;
+}
+/* .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
